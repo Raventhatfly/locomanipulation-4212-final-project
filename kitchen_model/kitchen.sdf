@@ -1,0 +1,23 @@
+<sdf version="1.10">
+  <model name="kitchen_static">
+    <static>true</static>
+    <link name="env">
+      <visual name="vis">
+        <geometry>
+          <mesh>
+            <uri>meshes/kitchen_env.gltf</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="col">
+        <geometry>
+          <mesh>
+            <uri>meshes/kitchen_env.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
