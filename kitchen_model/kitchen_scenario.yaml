@@ -1,0 +1,95 @@
+directives:
+  # Add the kitchen environment
+  - add_model:
+      name: kitchen
+      file: file://{KITCHEN_MODEL_PATH}/custom_kitchen.sdf
+  
+  # Add mobile IIWA robot
+  - add_model:
+      name: mobile_iiwa
+      file: package://manipulation/mobile_iiwa14_primitive_collision.urdf
+      default_joint_positions:
+        iiwa_base_x: [1.5]
+        iiwa_base_y: [1.5]
+        iiwa_joint_1: [0]
+        iiwa_joint_2: [0.1]
+        iiwa_joint_3: [0]
+        iiwa_joint_4: [-1.2]
+        iiwa_joint_5: [0]
+        iiwa_joint_6: [ 1.6]
+        iiwa_joint_7: [0]
+
+  - add_model:
+      name: shelves
+      file: package://manipulation/shelves.sdf
+  - add_weld:
+      parent: world
+      child: shelves::shelves_body
+      X_PC:
+          translation: [-1.8, -3.2, 1.0]
+          rotation: !Rpy { deg: [0, 0, 90]}
+
+  # Add objects on shelves
+  - add_model:
+      name: cheez_it
+      file: package://manipulation/hydro/003_cracker_box.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: cheez_it::base_link_cracker
+      X_PC:
+          translation: [0.05, -0.18, 0.245]
+          rotation: !Rpy { deg: [-90, 0, 0] }
+
+  - add_model:
+      name: sugar_box
+      file: package://manipulation/hydro/004_sugar_box.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: sugar_box::base_link_sugar
+      X_PC:
+          translation: [0.1, 0.15, -0.035]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
+  - add_model:
+      name: soup_can
+      file: package://manipulation/hydro/005_tomato_soup_can.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: soup_can::base_link_soup
+      X_PC:
+          translation: [0.1, -0.17, -0.072]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
+  - add_model:
+      name: soup_can2
+      file: package://manipulation/hydro/005_tomato_soup_can.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: soup_can2::base_link_soup
+      X_PC:
+          translation: [0.1, -0.17, 0.03]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
+  - add_model:
+      name: gelatin_box
+      file: package://manipulation/hydro/009_gelatin_box.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: gelatin_box::base_link_gelatin
+      X_PC:
+          translation: [0.1, 0.02, -0.087]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
+  - add_model:
+      name: gelatin_box2
+      file: package://manipulation/hydro/009_gelatin_box.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: gelatin_box2::base_link_gelatin
+      X_PC:
+          translation: [0.03, -0.01, -0.087]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
+      
+# model_drivers:
+#     mobile_iiwa: !InverseDynamicsDriver {}
