@@ -249,54 +249,6 @@
       </collision>
     </link>
     
-    <!-- Refrigerator -->
-    <link name="fridge">
-      <pose>3.6 -3.1 0.9 0 0 0</pose>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>0.8 0.8 1.8</size>
-          </box>
-        </geometry>
-        <material>
-          <diffuse>0.9 0.9 0.95 1.0</diffuse>
-        </material>
-      </visual>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>0.8 0.8 1.8</size>
-          </box>
-        </geometry>
-      </collision>
-    </link>
-    
-    <link name="fridge_handle">
-      <pose>3.6 -2.7 1.2 0 0 0</pose>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>0.1 0.05 0.3</size>
-          </box>
-        </geometry>
-        <material>
-          <diffuse>0.3 0.3 0.3 1.0</diffuse>
-        </material>
-      </visual>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>0.1 0.05 0.3</size>
-          </box>
-        </geometry>
-      </collision>
-    </link>
-    
-    <!-- Weld fridge handle to fridge -->
-    <joint name="fridge_handle_weld" type="fixed">
-      <parent>fridge</parent>
-      <child>fridge_handle</child>
-    </joint>
     
     <!-- Back Wall Countertop (between stove and fridge) -->
     <link name="back_countertop">
@@ -388,7 +340,7 @@
     
     <!-- Kitchen Island -->
     <link name="island_base">
-      <pose>0.0 0.5 0.45 0 0 0</pose>
+      <pose>0.0 0.5 0.30 0 0 0</pose>
       <visual name="visual">
         <geometry>
           <box>
@@ -396,7 +348,7 @@
           </box>
         </geometry>
         <material>
-          <diffuse>0.6 0.4 0.2 1.0</diffuse>
+          <diffuse>0.5 0.5 0.5 1.0</diffuse>
         </material>
       </visual>
       <collision name="collision">
@@ -409,7 +361,7 @@
     </link>
     
     <link name="island_counter">
-      <pose>0.0 0.5 0.925 0 0 0</pose>
+      <pose>0.0 0.5 0.775 0 0 0</pose>
       <visual name="visual">
         <geometry>
           <box>
@@ -417,7 +369,7 @@
           </box>
         </geometry>
         <material>
-          <diffuse>0.8 0.8 0.8 1.0</diffuse>
+          <diffuse>0.6 0.4 0.2 1.0</diffuse>
         </material>
       </visual>
       <collision name="collision">
@@ -429,70 +381,6 @@
       </collision>
     </link>
     
-    <!-- Trash Bin - Hollow design -->
-    <!-- Bottom of bin -->
-    <link name="trash_bin_bottom">
-      <pose>2.5 2.0 0.025 0 0 0</pose>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.2</radius>
-            <length>0.05</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <diffuse>0.3 0.3 0.3 1.0</diffuse>
-        </material>
-      </visual>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.2</radius>
-            <length>0.05</length>
-          </cylinder>
-        </geometry>
-      </collision>
-    </link>
-    
-    <!-- Outer wall of bin -->
-    <link name="trash_bin_outer_wall">
-      <pose>2.5 2.0 0.35 0 0 0</pose>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.2</radius>
-            <length>0.6</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <diffuse>0.3 0.3 0.3 1.0</diffuse>
-        </material>
-      </visual>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.2</radius>
-            <length>0.6</length>
-          </cylinder>
-        </geometry>
-      </collision>
-    </link>
-    
-    <!-- Inner hollow space (negative collision) -->
-    <link name="trash_bin_inner_wall">
-      <pose>2.5 2.0 0.38 0 0 0</pose>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.17</radius>
-            <length>0.6</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <diffuse>0.1 0.1 0.1 1.0</diffuse>
-        </material>
-      </visual>
-    </link>
     
     
   </model>
