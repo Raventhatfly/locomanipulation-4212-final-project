@@ -110,6 +110,56 @@ directives:
           translation: [0.15, 0.0, 0.025]
           rotation: !Rpy { deg: [0, 0, 0] }
 
+  - add_model:
+      name: strawberry
+      file: file://{ASSETS_PATH}/strawberry/strawberry.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: strawberry::strawberry_link
+      X_PC:
+          translation: [0.3, 0.0, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: peach
+      file: file://{ASSETS_PATH}/peach/peach.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: peach::peach_link
+      X_PC:
+          translation: [0.45, 0.0, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: banana
+      file: file://{ASSETS_PATH}/banana/banana.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: banana::banana_link
+      X_PC:
+          translation: [0.6, 0.0, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: lemon
+      file: file://{ASSETS_PATH}/lemon/lemon.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: lemon::lemon_link
+      X_PC:
+          translation: [-0.15, 0.0, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: pear
+      file: file://{ASSETS_PATH}/pear/pear.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: pear::pear_link
+      X_PC:
+          translation: [0.0, -0.15, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
 
       
 # model_drivers:
