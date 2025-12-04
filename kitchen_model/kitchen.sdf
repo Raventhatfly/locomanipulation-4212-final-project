@@ -5,7 +5,7 @@
       <visual name="vis">
         <geometry>
           <mesh>
-            <uri>meshes/kitchen_env.gltf</uri>
+            <uri>meshes_new/kitchen_env.gltf</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -13,7 +13,7 @@
       <collision name="col">
         <geometry>
           <mesh>
-            <uri>meshes/kitchen_env.obj</uri>
+            <uri>meshes_new/kitchen_env.obj</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
