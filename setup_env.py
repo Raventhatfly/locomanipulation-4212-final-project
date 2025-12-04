@@ -1,32 +1,40 @@
-from pydrake.all import DiagramBuilder, AddMultibodyPlantSceneGraph, Parser, Simulator, MeshcatVisualizer, StartMeshcat, Rgba
+from pydrake.all import Simulator, StartMeshcat
+from manipulation.station import LoadScenario, MakeHardwareStation
 import numpy as np
+import os
 
 # start the mesh 
 meshcat = StartMeshcat()
 
-builder = DiagramBuilder()
-plant, scene_graph = AddMultibodyPlantSceneGraph(builder, time_step=0.0)
+# Set up paths for the scenario file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+kitchen_model_path = os.path.join(current_dir, "kitchen_model")
+assets_path = os.path.join(current_dir, "assets")
 
-# add the kitchen model 
-model_instances = Parser(plant).AddModels("./kitchen_model/kitchen.sdf")
+# Load scenario file
+scenario_file = os.path.join(kitchen_model_path, "real_kitchen_scenario.yaml")
 
-plant.Finalize()
- 
+# Read and substitute paths in the YAML file
+with open(scenario_file, 'r') as f:
+    scenario_data = f.read()
+    scenario_data = scenario_data.replace("{KITCHEN_MODEL_PATH}", kitchen_model_path)
+    scenario_data = scenario_data.replace("{ASSETS_PATH}", assets_path)
 
- 
-visualizer = MeshcatVisualizer.AddToBuilder(builder, scene_graph, meshcat)
+# Load scenario and create hardware station
+scenario = LoadScenario(data=scenario_data)
+station = MakeHardwareStation(scenario, meshcat)
 
-# start the simulator 
-diagram = builder.Build()
-simulator = Simulator(diagram)
+# Create simulator using the station
+simulator = Simulator(station)
 simulator.Initialize()
 
-# get context 
+# get context and publish initial state
 context = simulator.get_context()
-diagram.ForcedPublish(context)
+station.ForcedPublish(context)
 
+print(f"Meshcat is running at: {meshcat.web_url()}")
 
 try:
     input()
 except KeyboardInterrupt:
-    print("\n程序已退出")
+    print("\nProgram terminated")
