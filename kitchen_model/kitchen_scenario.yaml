@@ -90,6 +90,17 @@ directives:
           translation: [0.03, -0.01, -0.087]
           rotation: !Rpy { deg: [-90, 0, -90] }
 
+  - add_model:
+      name: apple
+      file: file://{ASSETS_PATH}/apple.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: apple::apple_link
+      X_PC:
+          translation: [0.0, 0.0, 0.07]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+
       
 # model_drivers:
 #     mobile_iiwa: !InverseDynamicsDriver {}
