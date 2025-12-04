@@ -92,12 +92,12 @@ directives:
 
   - add_model:
       name: apple
-      file: file://{ASSETS_PATH}/apple.sdf
+      file: file://{ASSETS_PATH}/apple/apple.sdf
   - add_weld:
       parent: kitchen::island_counter
       child: apple::apple_link
       X_PC:
-          translation: [0.0, 0.0, 0.07]
+          translation: [0.0, 0.0, 0.025]
           rotation: !Rpy { deg: [0, 0, 0] }
 
 
