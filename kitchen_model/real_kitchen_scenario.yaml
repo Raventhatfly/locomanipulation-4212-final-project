@@ -1,0 +1,21 @@
+directives:
+  # Add the kitchen environment
+  - add_model:
+      name: kitchen
+      file: file://{KITCHEN_MODEL_PATH}/kitchen.sdf
+
+  # Add mobile IIWA robot with collision
+  - add_model:
+      name: mobile_iiwa
+      file: package://manipulation/mobile_iiwa14_primitive_collision.urdf
+      default_joint_positions:
+        iiwa_base_x: [-4.0]
+        iiwa_base_y: [0.0]
+        iiwa_base_z: [0.0]
+        iiwa_joint_1: [0]
+        iiwa_joint_2: [0.1]
+        iiwa_joint_3: [0]
+        iiwa_joint_4: [-1.2]
+        iiwa_joint_5: [0]
+        iiwa_joint_6: [1.6]
+        iiwa_joint_7: [0]
