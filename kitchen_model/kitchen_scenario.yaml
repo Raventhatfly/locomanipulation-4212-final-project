@@ -160,6 +160,87 @@ directives:
           translation: [0.0, -0.15, 0.025]
           rotation: !Rpy { deg: [0, 0, 0] }
 
+  # Add kitchen utensils to the island counter
+  - add_model:
+      name: bowl
+      file: file://{ASSETS_PATH}/bowl/bowl.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: bowl::bowl_link
+      X_PC:
+          translation: [0.3, -0.2, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: mug
+      file: file://{ASSETS_PATH}/mug/mug.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: mug::mug_link
+      X_PC:
+          translation: [0.45, -0.2, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: plate
+      file: file://{ASSETS_PATH}/plate/plate.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: plate::plate_link
+      X_PC:
+          translation: [0.6, -0.2, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: fork
+      file: file://{ASSETS_PATH}/fork/fork.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: fork::fork_link
+      X_PC:
+          translation: [0.3, -0.35, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: knife
+      file: file://{ASSETS_PATH}/knife/knife.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: knife::knife_link
+      X_PC:
+          translation: [0.45, -0.35, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: spoon
+      file: file://{ASSETS_PATH}/spoon/spoon.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: spoon::spoon_link
+      X_PC:
+          translation: [0.6, -0.35, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: plum
+      file: file://{ASSETS_PATH}/plum/plum.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: plum::plum_link
+      X_PC:
+          translation: [0.75, 0.0, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
+  - add_model:
+      name: tomato_soup_can
+      file: file://{ASSETS_PATH}/tomato_soup_can/tomato_soup_can.sdf
+  - add_weld:
+      parent: kitchen::island_counter
+      child: tomato_soup_can::tomato_soup_can_link
+      X_PC:
+          translation: [0.9, 0.0, 0.025]
+          rotation: !Rpy { deg: [0, 0, 0] }
+
 
       
 # model_drivers:
