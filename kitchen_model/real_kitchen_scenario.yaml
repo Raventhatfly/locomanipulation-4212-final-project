@@ -19,3 +19,46 @@ directives:
         iiwa_joint_5: [0]
         iiwa_joint_6: [1.6]
         iiwa_joint_7: [0]
+
+  # Add shelves in corner
+  - add_model:
+      name: shelves
+      file: package://manipulation/shelves.sdf
+  - add_weld:
+      parent: world
+      child: shelves::shelves_body
+      X_PC:
+          translation: [-7.2, 0.79, 0.9]
+          rotation: !Rpy { deg: [0, 0, 90]}
+
+  # Add objects on shelves
+  - add_model:
+      name: cheez_it
+      file: package://manipulation/hydro/003_cracker_box.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: cheez_it::base_link_cracker
+      X_PC:
+          translation: [0.05, -0.18, 0.245]
+          rotation: !Rpy { deg: [-90, 0, 0] }
+
+  - add_model:
+      name: sugar_box
+      file: package://manipulation/hydro/004_sugar_box.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: sugar_box::base_link_sugar
+      X_PC:
+          translation: [0.1, 0.15, -0.035]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
+  - add_model:
+      name: soup_can
+      file: package://manipulation/hydro/005_tomato_soup_can.sdf
+  - add_weld:
+      parent: shelves::shelves_body
+      child: soup_can::base_link_soup
+      X_PC:
+          translation: [0.1, -0.17, -0.072]
+          rotation: !Rpy { deg: [-90, 0, -90] }
+
