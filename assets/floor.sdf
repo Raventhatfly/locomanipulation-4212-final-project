@@ -24,9 +24,9 @@
           </box>
         </geometry>
         <material>
-          <ambient>0.8 0.8 0.8 1</ambient>
-          <diffuse>0.8 0.8 0.8 1</diffuse>
-          <specular>0.2 0.2 0.2 1</specular>
+          <ambient>0.8 0.8 0.8 0</ambient>
+          <diffuse>0.8 0.8 0.8 0</diffuse>
+          <specular>0.2 0.2 0.2 0</specular>
         </material>
       </visual>
       <inertial>

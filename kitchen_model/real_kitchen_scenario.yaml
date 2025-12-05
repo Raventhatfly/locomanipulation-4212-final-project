@@ -3,6 +3,9 @@ directives:
   - add_model:
       name: kitchen
       file: file://{KITCHEN_MODEL_PATH}/kitchen.sdf
+  - add_weld:
+      parent: world
+      child: kitchen::env
 
   # Add ground plane for collision
   - add_model:
@@ -20,7 +23,7 @@ directives:
       file: package://manipulation/mobile_iiwa14_primitive_collision.urdf
       default_joint_positions:
         iiwa_base_x: [-4.0]
-        iiwa_base_y: [0.0]
+        iiwa_base_y: [-1.0]
         iiwa_base_z: [0.0]
         iiwa_joint_1: [0]
         iiwa_joint_2: [0.1]
@@ -79,26 +82,26 @@ directives:
       file: file://{ASSETS_PATH}/apple/apple.sdf
       default_free_body_pose:
         apple_link:
-          translation: [-5.0, -1.5, 2.3]
+          translation: [-5.0, -1.5 , 2.3]
 
   - add_model:
       name: apple2
       file: file://{ASSETS_PATH}/apple/apple.sdf
       default_free_body_pose:
         apple_link:
-          translation: [-5.3, 1.0, 2.5]
+          translation: [-5.3, 0.0, 2.5]
 
   - add_model:
       name: banana1
       file: file://{ASSETS_PATH}/banana/banana.sdf
       default_free_body_pose:
         banana_link:
-          translation: [-5.7, 1.0, 2.6]
+          translation: [-5.7, 0.0, 1.5]
 
   - add_model:
       name: banana2
       file: file://{ASSETS_PATH}/banana/banana.sdf
       default_free_body_pose:
         banana_link:
-          translation: [-5.4, 1.0, 2.8]
+          translation: [-5.4, -3.5, 1.5]
 

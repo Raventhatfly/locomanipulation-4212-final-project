@@ -1,6 +1,6 @@
 <sdf version="1.10">
   <model name="kitchen_static">
-    <static>true</static>
+    <static>false</static>
     <link name="env">
       <visual name="vis">
         <geometry>
