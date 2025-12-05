@@ -11,9 +11,130 @@
         </geometry>
       </visual>
       <collision name="col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
         <geometry>
           <mesh>
-            <uri>meshes_new/kitchen_env.obj</uri>
+            <uri>meshes_new/collision/table_box.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="chair_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/chairs.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="wall1_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/wall_1.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="wall2_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/wall_2.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="wall3_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/wall_3.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="wall4_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/wall_4.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="cabinet1_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/cabinet1.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="cabinet2_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/cabinet2.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="cabinet3_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/cabinet3.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="cabinet4_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/cabinet4.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="frig_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/frig.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="table1_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/table1.obj</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <collision name="table2_col">
+        <pose>0 0 0 1.5708 0 0</pose>  <!-- Rotate 90° around X-axis -->
+        <geometry>
+          <mesh>
+            <uri>meshes_new/collision/table2.obj</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
