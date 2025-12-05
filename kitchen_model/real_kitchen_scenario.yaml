@@ -4,6 +4,16 @@ directives:
       name: kitchen
       file: file://{KITCHEN_MODEL_PATH}/kitchen.sdf
 
+  # Add ground plane for collision
+  - add_model:
+      name: floor
+      file: file://{ASSETS_PATH}/floor.sdf
+  - add_weld:
+      parent: world
+      child: floor::floor_link
+      X_PC:
+          translation: [0, 0, -0.05]
+
   # Add mobile IIWA robot with collision
   - add_model:
       name: mobile_iiwa
@@ -61,4 +71,34 @@ directives:
       X_PC:
           translation: [0.1, -0.17, -0.072]
           rotation: !Rpy { deg: [-90, 0, -90] }
+
+  # Add fruits on kitchen table (middle of kitchen around x=-5.5, z=2.5)
+  # Not welded - they will fall and settle with physics
+  - add_model:
+      name: apple1
+      file: file://{ASSETS_PATH}/apple/apple.sdf
+      default_free_body_pose:
+        apple_link:
+          translation: [-5.0, -1.5, 2.3]
+
+  - add_model:
+      name: apple2
+      file: file://{ASSETS_PATH}/apple/apple.sdf
+      default_free_body_pose:
+        apple_link:
+          translation: [-5.3, 1.0, 2.5]
+
+  - add_model:
+      name: banana1
+      file: file://{ASSETS_PATH}/banana/banana.sdf
+      default_free_body_pose:
+        banana_link:
+          translation: [-5.7, 1.0, 2.6]
+
+  - add_model:
+      name: banana2
+      file: file://{ASSETS_PATH}/banana/banana.sdf
+      default_free_body_pose:
+        banana_link:
+          translation: [-5.4, 1.0, 2.8]
 
