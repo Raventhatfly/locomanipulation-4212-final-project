@@ -102,3 +102,22 @@ directives:
         banana_link:
           translation: [-5.4, -3.5, 1.5]
 
+  # Add camera welded to iiwa first link
+  - add_model:
+      name: camera
+      file: package://manipulation/camera_box.sdf
+  - add_weld:
+      parent: mobile_iiwa::iiwa_link_1
+      child: camera::base
+      X_PC:
+          translation: [0, 0, 1.5]
+          rotation: !Rpy { deg: [-90, 0, 90] }  # Roll 90°, Yaw 90° to look forward horizontally
+
+# Add RGBD camera sensor
+cameras:
+  camera:
+    name: camera
+    depth: true
+    X_PB:
+      base_frame: camera::base
+
