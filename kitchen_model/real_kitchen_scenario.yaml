@@ -3,9 +3,6 @@ directives:
   - add_model:
       name: kitchen
       file: file://{KITCHEN_MODEL_PATH}/kitchen.sdf
-  - add_weld:
-      parent: world
-      child: kitchen::env
 
   # Add ground plane for collision
   - add_model:
