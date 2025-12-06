@@ -6,12 +6,12 @@
         <mass>0.08</mass>
         <pose>0 0 0 0 0 0</pose>
         <inertia>
-          <ixx>0.00008</ixx>
+          <ixx>0.001</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00008</iyy>
+          <iyy>0.001</iyy>
           <iyz>0</iyz>
-          <izz>0.00008</izz>
+          <izz>0.001</izz>
         </inertia>
       </inertial>
       
@@ -36,13 +36,31 @@
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
+        <drake:proximity_properties>
+          <drake:point_contact_stiffness>2000</drake:point_contact_stiffness>
+          <drake:hunt_crossley_dissipation>200.0</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>2.0</drake:mu_dynamic>
+          <drake:mu_static>2.0</drake:mu_static>
+        </drake:proximity_properties>
         <surface>
           <friction>
             <ode>
-              <mu>0.75</mu>
-              <mu2>0.75</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
           </friction>
+          <contact>
+            <ode>
+              <kp>5e5</kp>
+              <kd>1000.0</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <bounce>
+            <restitution_coefficient>0.01</restitution_coefficient>
+            <threshold>0.001</threshold>
+          </bounce>
         </surface>
       </collision>
     </link>

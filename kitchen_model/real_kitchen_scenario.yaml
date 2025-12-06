@@ -75,32 +75,46 @@ directives:
   # Add fruits on kitchen table (middle of kitchen around x=-5.5, z=2.5)
   # Not welded - they will fall and settle with physics
   - add_model:
-      name: apple1
+      name: apple
       file: file://{ASSETS_PATH}/apple/apple.sdf
       default_free_body_pose:
         apple_link:
-          translation: [-5.0, -1.5 , 2.3]
+          translation: [-4.5, -1.5 , 0.95]
 
   - add_model:
-      name: apple2
-      file: file://{ASSETS_PATH}/apple/apple.sdf
+      name: orange
+      file: file://{ASSETS_PATH}/orange/orange.sdf
       default_free_body_pose:
-        apple_link:
-          translation: [-5.3, 0.0, 2.5]
+        orange_link:
+          translation: [-5.3, -2.0, 0.95]
 
   - add_model:
-      name: banana1
+      name: banana
       file: file://{ASSETS_PATH}/banana/banana.sdf
       default_free_body_pose:
         banana_link:
-          translation: [-5.7, 0.0, 1.5]
+          translation: [-5.7, -2.0, 0.95]
 
   - add_model:
-      name: banana2
-      file: file://{ASSETS_PATH}/banana/banana.sdf
+      name: peach
+      file: file://{ASSETS_PATH}/peach/peach.sdf
       default_free_body_pose:
-        banana_link:
-          translation: [-5.4, -3.5, 1.5]
+        peach_link:
+          translation: [-5.4, -3.15, 0.95]
+
+  - add_model:
+      name: lemon
+      file: file://{ASSETS_PATH}/lemon/lemon.sdf
+      default_free_body_pose:
+        lemon_link:
+          translation: [-4.3, -3.15, 0.95]
+
+#   - add_model:
+#       name: plate
+#       file: file://{ASSETS_PATH}/plate/plate.sdf
+#       default_free_body_pose:
+#         plate_link:
+#           translation: [-5.8, -1.5, 0.91]
 
   # Add camera welded to iiwa first link
   - add_model:
@@ -111,7 +125,7 @@ directives:
       child: camera::base
       X_PC:
           translation: [0, 0, 1.5]
-          rotation: !Rpy { deg: [-90, 0, 90] }  # Roll 90°, Yaw 90° to look forward horizontally
+          rotation: !Rpy { deg: [-110, 0, 90] }  # Roll 90°, Yaw 90° to look forward horizontally
 
 # Add RGBD camera sensor
 cameras:
