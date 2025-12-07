@@ -37,31 +37,13 @@
           </mesh>
         </geometry>
         <drake:proximity_properties>
-          <drake:point_contact_stiffness>2000</drake:point_contact_stiffness>
-          <drake:hunt_crossley_dissipation>200.0</drake:hunt_crossley_dissipation>
-          <drake:mu_dynamic>2.0</drake:mu_dynamic>
-          <drake:mu_static>2.0</drake:mu_static>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>5e5</drake:hydroelastic_modulus>
+          <drake:mesh_resolution_hint>0.005</drake:mesh_resolution_hint>
+          <drake:hunt_crossley_dissipation>100.0</drake:hunt_crossley_dissipation>
+          <drake:mu_dynamic>1.0</drake:mu_dynamic>
+          <drake:mu_static>1.5</drake:mu_static>
         </drake:proximity_properties>
-        <surface>
-          <friction>
-            <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
-            </ode>
-          </friction>
-          <contact>
-            <ode>
-              <kp>5e5</kp>
-              <kd>1000.0</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0.001</min_depth>
-            </ode>
-          </contact>
-          <bounce>
-            <restitution_coefficient>0.01</restitution_coefficient>
-            <threshold>0.001</threshold>
-          </bounce>
-        </surface>
       </collision>
     </link>
   </model>
