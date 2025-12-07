@@ -116,6 +116,17 @@ directives:
 #         plate_link:
 #           translation: [-5.8, -1.5, 0.91]
 
+  # Add gripper welded to iiwa end effector
+  - add_model:
+      name: wsg
+      file: package://manipulation/hydro/schunk_wsg_50_with_tip.sdf
+  - add_weld:
+      parent: mobile_iiwa::iiwa_link_7
+      child: wsg::body
+      X_PC:
+          translation: [0, 0, 0.09]
+          rotation: !Rpy { deg: [90, 0, 90] }
+
   # Add camera welded to iiwa first link
   - add_model:
       name: camera
