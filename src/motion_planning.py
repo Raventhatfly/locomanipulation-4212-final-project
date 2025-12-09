@@ -229,7 +229,7 @@ def _hold(
 
 def build_trajs_place(
     path_place: list[np.ndarray],
-    path_upright: list[np.ndarray],
+    # path_upright: list[np.ndarray],
     q_grasp: np.ndarray,
     start_time: float = 0.0,
     dt_unused: float = 0.05,
@@ -261,7 +261,7 @@ def build_trajs_place(
     t = _hold(times, Q, t, q_grasp, pause_after_action)
 
     # 5) path_upright (ends at q_upright)
-    t = _append_path(times, Q, t, path_upright)
+    # t = _append_path(times, Q, t, path_upright)
 
     q_samples = np.stack(Q, axis=1)
     traj_q = PiecewisePolynomial.FirstOrderHold(times, q_samples)
@@ -280,6 +280,7 @@ def build_trajs_pick(
     path_pick: list[np.ndarray],
     path_upright: list[np.ndarray],
     q_grasp: np.ndarray,
+    start_time: float = 0.0,
 ) -> tuple[PiecewisePolynomial, PiecewisePolynomial]:
     """
     Pick-phase trajectory builder.
