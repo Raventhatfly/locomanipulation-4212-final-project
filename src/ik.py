@@ -20,7 +20,6 @@ class IKSolver:
         iz: int,
         active_hi: int,
         q0: np.ndarray,
-        q0new: np.ndarray,
         gripper_body,
         theta_bound: float = 0.01 * np.pi,
         pos_tol: float = 0.02,
@@ -33,14 +32,13 @@ class IKSolver:
         self.iz = iz
         self.active_hi = active_hi
         self.q0 = np.asarray(q0, dtype=float).copy()
-        self.q0new = np.asarray(q0new, dtype=float).copy()
         self.gripper_body = gripper_body
 
         self.theta_bound = theta_bound
         self.pos_tol = pos_tol
         self.base_tol = base_tol
 
-    def solve(self, X_WG_target: RigidTransform) -> np.ndarray:
+    def solve(self, X_WG_target: RigidTransform, q0new) -> np.ndarray:
         world_frame = self.plant.world_frame()
         gripper_frame = self.plant.GetFrameByName("body")
 
@@ -55,9 +53,9 @@ class IKSolver:
         # Solve IK problem
         prog = ik.get_mutable_prog()
         q_dec = ik.q()
-        prog.AddBoundingBoxConstraint(self.q0new[[self.ix,self.iy]]-self.base_tol, self.q0new[[self.ix,self.iy]]+self.base_tol, q_dec[[self.ix, self.iy]])
-        prog.AddBoundingBoxConstraint(self.q0new[self.iz], self.q0new[self.iz]+self.pos_tol, q_dec[self.iz])
-        prog.SetInitialGuess(q_dec, self.q0new)
+        prog.AddBoundingBoxConstraint(q0new[[self.ix,self.iy]]-self.base_tol, q0new[[self.ix,self.iy]]+self.base_tol, q_dec[[self.ix, self.iy]])
+        prog.AddBoundingBoxConstraint(q0new[self.iz], q0new[self.iz]+self.pos_tol, q_dec[self.iz])
+        prog.SetInitialGuess(q_dec, q0new)
         result = Solve(prog)
 
         if result.is_success():
