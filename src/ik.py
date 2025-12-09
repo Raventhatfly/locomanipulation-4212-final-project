@@ -24,6 +24,7 @@ class IKSolver:
         theta_bound: float = 0.01 * np.pi,
         pos_tol: float = 0.02,
         base_tol: float = 0.2,
+        col_dist_tol: float = 0.01,
     ) -> None:
         self.plant = plant
         self.context = plant_context
@@ -37,6 +38,7 @@ class IKSolver:
         self.theta_bound = theta_bound
         self.pos_tol = pos_tol
         self.base_tol = base_tol
+        self.col_dist_tol = col_dist_tol
 
     def solve(self, X_WG_target: RigidTransform, q0new) -> np.ndarray:
         world_frame = self.plant.world_frame()
@@ -48,7 +50,7 @@ class IKSolver:
                                 X_WG_target.translation() + self.pos_tol)
         ik.AddOrientationConstraint(world_frame, X_WG_target.rotation(),
                                     gripper_frame, RotationMatrix(np.eye(3)), self.theta_bound)
-        ik.AddMinimumDistanceLowerBoundConstraint(0.01)
+        ik.AddMinimumDistanceLowerBoundConstraint(self.col_dist_tol)
 
         # Solve IK problem
         prog = ik.get_mutable_prog()
