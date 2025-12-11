@@ -1,4 +1,7 @@
-# locomanipulation-4212-final-project
+# CulinaBot
+
+This repository contains our final project for MIT 6.4212 Robotic Manipulation. We implemented **CulinaBot**, a mobile manipulator that can execute user commands in a custom kitchen environment.
+
 
 ## Environment Setup
 ```
